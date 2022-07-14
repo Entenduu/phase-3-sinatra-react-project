@@ -24,22 +24,25 @@ class ApplicationController < Sinatra::Base
 
   post '/completed_request_forms' do
     completed_request_forms = Completed_request_form.create(
-      client_name: params[:client_name],
-      address: params[:address],
-      number: params[:number],
-      email: params[:number],
-      reason_for_contact: params[:reason_for_contact],
-      heard_from: params[:heard_from],
-      inspection_fee: params[:inspection_fee],
-      trap_installation_fee: params[:trap_installation_fee],
-      price_for_animal_removal_or_relocation: params[:price_for_animal_removal_or_relocation],
-      exclusion_and_preventative_work: params[:exclusion_and_preventative_work],
-      description_of_work: params[:description_of_work],
-      other_notes: params[:other_notes],
-      sub_total: params[:sub_total],
-      state_sales_tax: params[:state_sales_tax],
-      deposit: params[:deposit],
-      total: params[:total]
+        client_name: params[:client_name],
+        street_address_line_1: params[:street_address_line_1],
+        street_address_line_2: params[:street_address_line_2],
+        city: params[:city],
+        state: params[:state],
+        zip_code: params[:zip_code],
+        phone_number: params[:phone_number],
+        email: params[:email],
+        date_of_inspection: params[:date_of_inspection],
+        nuisance_animal: params[:nuisance_animal],
+        inspection_fee: params[:inspection_fee],
+        trap_installation_fee: params[:trap_installation_fee],
+        price_for_animal_removal_or_relocation: params[:price_for_animal_removal_or_relocation],
+        exclusion_and_preventative_work: params[:exclusion_and_preventative_work],
+        sub_total: params[:sub_total],
+        state_sales_tax: params[:state_sales_tax],
+        deposit: params[:deposit],
+        total: params[:total],
+        signed_and_paid: params[:signed_and_paid]
     )
   end
 
@@ -47,21 +50,24 @@ class ApplicationController < Sinatra::Base
     completed_request_form = Completed_request_form.find(params[:id])
     completed_request_form.update(
       client_name: params[:client_name],
-      address: params[:address],
-      number: params[:number],
-      email: params[:number],
-      reason_for_contact: params[:reason_for_contact],
-      heard_from: params[:heard_from],
+      street_address_line_1: params[:street_address_line_1],
+      street_address_line_2: params[:street_address_line_2],
+      city: params[:city],
+      state: params[:state],
+      zip_code: params[:zip_code],
+      phone_number: params[:phone_number],
+      email: params[:email],
+      date_of_inspection: params[:date_of_inspection],
+      nuisance_animal: params[:nuisance_animal],
       inspection_fee: params[:inspection_fee],
       trap_installation_fee: params[:trap_installation_fee],
       price_for_animal_removal_or_relocation: params[:price_for_animal_removal_or_relocation],
       exclusion_and_preventative_work: params[:exclusion_and_preventative_work],
-      description_of_work: params[:description_of_work],
-      other_notes: params[:other_notes],
       sub_total: params[:sub_total],
       state_sales_tax: params[:state_sales_tax],
       deposit: params[:deposit],
-      total: params[:total]
+      total: params[:total],
+      signed_and_paid: params[:signed_and_paid]
     )
   end
 
