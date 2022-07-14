@@ -1,6 +1,6 @@
 class CreateAnimalControlRequests < ActiveRecord::Migration[6.1]
   def change
-    create_table :requests do |t|
+    create_table :animal_control_requests do |t|
       t.string :name
       t.string :phone_number
       t.string :email

@@ -12,7 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2022_07_12_001635) do
 
-  create_table "completed_requests", force: :cascade do |t|
+  create_table "animal_control_requests", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "email"
+    t.string "description"
+    t.integer "completed_requests_id"
+    t.datetime "created_at"
+  end
+
+  create_table "completed_request_forms", force: :cascade do |t|
     t.string "client_name"
     t.string "address"
     t.string "number"
@@ -29,15 +38,6 @@ ActiveRecord::Schema.define(version: 2022_07_12_001635) do
     t.string "state_sales_tax"
     t.string "deposit"
     t.string "total"
-    t.datetime "created_at"
-  end
-
-  create_table "requests", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.string "email"
-    t.string "description"
-    t.integer "completed_requests_id"
     t.datetime "created_at"
   end
 

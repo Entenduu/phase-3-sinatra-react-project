@@ -1,6 +1,6 @@
 class CreateCompletedRequestForms < ActiveRecord::Migration[6.1]
   def change
-    create_table :completed_requests do |t|
+    create_table :completed_request_forms do |t|
       t.string :client_name
       t.string :address
       t.string :number
